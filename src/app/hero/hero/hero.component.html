@@ -1,0 +1,20 @@
+<div>
+    <h2>Heroes</h2>
+
+    <mat-tab-group>
+            <mat-tab label="Heroes">
+              <h3>Heroes</h3>
+
+<hero-list [heroes$]="heroes$"></hero-list>
+
+
+            </mat-tab>
+            <mat-tab label="Villains">
+              <h3>Villans</h3>
+              <hero-list [heroes$]="villains$"></hero-list>
+            </mat-tab>
+          </mat-tab-group>
+
+
+
+</div>

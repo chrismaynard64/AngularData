@@ -1,0 +1,5 @@
+<div *ngIf="heroes$ | async as heroes">
+    <div *ngFor="let hero of heroes"  (click)="selected(hero)">
+        {{hero.name}} 
+    </div>
+</div>
