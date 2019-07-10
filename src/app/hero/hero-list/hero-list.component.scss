@@ -1,0 +1,55 @@
+
+div.hero {
+    width: 49%;
+    height: 25px;
+    background-color:rgb(63, 81, 181);;
+    color: #fff;
+    padding: 5px;
+    margin: 4px 4px 4px 4px;
+    text-align: center;
+    border-radius: 7px;
+;}
+
+div.template {
+    display: inline-block;
+    float: left;
+}
+
+div.reactive {
+    display: inline-block;
+    float: left;
+}
+
+div.grid-container {
+    display: grid;
+
+}
+
+div.grid-r1-col1 {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 1
+}
+
+div.grid-r1-col2 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: span 1
+}
+
+div.grid-col1 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: span 1
+}
+
+
+div.grid-col2 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: span 1
+}

@@ -1,5 +1,11 @@
 <div *ngIf="heroes$ | async as heroes">
-    <div *ngFor="let hero of heroes"  (click)="selected(hero)">
+    <div *ngFor="let hero of heroes">
+        <div   (click)="selected(hero)" class="hero template">
         {{hero.name}} 
     </div>
+ 
+    <div (click)="selected2(hero)" class="hero reactive">
+        {{hero.name}} 
+    </div>
+</div>
 </div>

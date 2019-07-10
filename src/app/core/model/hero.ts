@@ -5,4 +5,10 @@ export class Hero {
     name: string = '';
     portrait: string = '';
     type: HeroType;
+
+
+    constructor() {
+        if (!this.id)  
+            this.id = 20 + Math.floor((Math.random() * 10000));
+    }
 }

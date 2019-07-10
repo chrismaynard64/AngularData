@@ -1,1 +1,47 @@
-<p>hero-edit works!</p>
+<div class="grid-container">
+
+
+    <div class="grid-r1-col1">
+        <div style="width: 100%; text-align: right"> <button mat-button class="close">
+            <mat-icon (click)="close()">clear</mat-icon>
+          </button>
+        </div>
+
+
+    </div>
+
+
+<div class="grid-col1">
+    <form #f="ngForm" novalidate>
+    <div class="example-container">
+            <mat-form-field>
+                    <input matInput placeholder="name" [(ngModel)]="hero.name" name="name" required>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                        <input matInput placeholder="portrait" [(ngModel)]="hero.portrait" 
+                        name="portrait" type="number" min="1" max="50" maxlength="2" >
+                      </mat-form-field>
+       
+        <mat-form-field>
+          <mat-select placeholder="Hero or Villain?" [(ngModel)]="hero.type" name="type">
+                <mat-option [value]="1">Hero</mat-option>
+                <mat-option [value]="2">Villain</mat-option>
+            </mat-select>
+        </mat-form-field>
+      </div>
+    </form>
+</div>
+<div class="grid-col2">
+    <img [src]="portraitUrl(hero)" alt="">
+</div>
+
+<div><button mat-raised-button color="primary" (click)="close()">Cancel</button> &nbsp;
+  <button mat-raised-button color="primary"  (click)="save()">Save</button>&nbsp;
+  <button mat-raised-button color="primary"  (click)="delete()">Delete</button></div>
+
+  <div>{{ hero | json}}</div>
+
+  <div>Valid:{{ f?.valid}} {{ f.value | json}}</div>
+
+</div>

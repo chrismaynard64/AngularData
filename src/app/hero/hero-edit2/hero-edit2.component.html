@@ -1,0 +1,46 @@
+<div class="grid-container">
+
+
+        <div class="grid-r1-col1">
+            <div style="width: 100%; text-align: right"> <button mat-button class="close">
+                <mat-icon (click)="close()">clear</mat-icon>
+              </button>
+            </div>
+    
+    
+        </div>
+    
+    
+    <div class="grid-col1">
+            <form [formGroup]="heroForm">
+        <div class="example-container">
+                <mat-form-field>
+                        <input matInput placeholder="name" formControlName="name" name="name" required>
+                      </mat-form-field>
+    
+                      <mat-form-field>
+                            <input matInput placeholder="portrait" formControlName="portrait"
+                            name="portrait" type="number" min="1" max="50" required >
+                          </mat-form-field>
+           
+            <mat-form-field>
+              <mat-select placeholder="Hero or Villain?" formControlName="type" name="type"  required>
+                    <mat-option [value]="1">Hero</mat-option>
+                    <mat-option [value]="2">Villain</mat-option>
+                </mat-select>
+            </mat-form-field>
+          </div>
+        </form>
+    </div>
+    <div class="grid-col2">
+        <img [src]="portraitUrl(heroForm.value)" alt="">
+    </div>
+    
+    <div><button mat-raised-button color="primary" (click)="close()">Cancel</button> &nbsp;
+      <button mat-raised-button color="primary"  (click)="save()" [disabled]="!heroForm.valid">Save</button>&nbsp;
+      <button mat-raised-button color="primary"  (click)="delete()">Delete</button></div>
+    
+    <div>{{ hero | json}}</div>
+    
+    </div>
+    

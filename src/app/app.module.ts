@@ -18,6 +18,7 @@ import { entityConfig } from './store/entity-metadata';
 import { EntityDataModule } from '@ngrx/data';
 import { HttpClientModule } from '@angular/common/http';
 import { HeroModule } from './hero/hero.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HeroModule } from './hero/hero.module';
     NgMaterialModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([AppEffects]),

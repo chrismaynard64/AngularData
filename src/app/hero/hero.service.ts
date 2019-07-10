@@ -3,14 +3,24 @@ import {
   EntityCollectionServiceBase,
   EntityCollectionServiceElementsFactory
 } from '@ngrx/data';
-import { of } from 'rxjs';
+import { of, BehaviorSubject, Subject } from 'rxjs';
 
 import { Hero } from '../core/model';
+import { HeroSaveData } from './heroEditData';
 
 
 
 @Injectable({ providedIn: 'root' })
 export class HeroService extends EntityCollectionServiceBase<Hero> {
+
+  _heroChange$: Subject<HeroSaveData> = new Subject<HeroSaveData>();
+
+  get heroChange$() {
+    return this._heroChange$;
+  }
+
+
+
   constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
     super('Hero', serviceElementsFactory);
   }
